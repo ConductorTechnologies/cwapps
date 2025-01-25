@@ -1,0 +1,16 @@
+{
+  "platforms": {
+    "windows": {
+      "type": "batch",
+      "installer": "./install.bat"
+    },
+    "mac": {
+      "type": "shell",
+      "installer": "./install-mac.sh"
+    },
+    "linux": {
+      "type": "shell",
+      "installer": "./install-linux.sh"
+    }
+  }
+}
