@@ -5,7 +5,7 @@
   "detail": "detail.md",
   "instructions": "instructions.md",
   "logo": "https://downloads.conductortech.com/images/maya.png",
-  "latest_version": "0.0.1-rc.5",
+  "latest_version": "0.0.1-rc.6",
   "author": "Conductor Developers",
   "website": "https://conductortech.com",
   "operating_systems": {
@@ -36,6 +36,12 @@
     "2025"
   ],
   "versions": [
+    {
+      "release_label": "0.0.1-rc.6",
+      "date": "2025-01-25T21:41:46",
+      "release_type": "release candidate",
+      "description": "CICD tweaks"
+    },
     {
       "release_label": "0.0.1-rc.5",
       "date": "2025-01-25T19:48:48",
@@ -88,5 +94,5 @@
   "releases_url": "https://pypi.org/project/cwmaya",
   "docs_url": "https://storm-doc.vercel.app",
   "release_notes": "release_notes.md",
-  "last_updated": "2025-01-25T19:48:48"
+  "last_updated": "2025-01-25T21:41:46"
 }
