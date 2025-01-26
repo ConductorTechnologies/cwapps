@@ -1,16 +1,92 @@
 {
-  "platforms": {
+  "name": "Conductor Maya Plugin",
+  "id": "cwmaya",
+  "summary": "Submit your Maya project to Conductor's cloud service.",
+  "detail": "detail.md",
+  "instructions": "instructions.md",
+  "logo": "https://downloads.conductortech.com/images/maya.png",
+  "latest_version": "0.0.1-rc.5",
+  "author": "Conductor Developers",
+  "website": "https://conductortech.com",
+  "operating_systems": {
     "windows": {
-      "type": "batch",
-      "installer": "./install.bat"
+      "installer": "install.bat",
+      "default_location": "%USERPROFILE%/Documents/Maya"
     },
     "mac": {
-      "type": "shell",
-      "installer": "./install-mac.sh"
+      "installer": "install-mac.sh",
+      "default_location": "$HOME/Library/Preferences/Autodesk/Maya"
     },
     "linux": {
-      "type": "shell",
-      "installer": "./install-linux.sh"
+      "installer": "install-linux.sh",
+      "default_location": "$HOME/Maya"
     }
-  }
+  },
+  "scripts": {
+    "installer": {
+      "windows": "./install.bat",
+      "mac": "./install-mac.sh",
+      "linux": "./install-linux.sh"
+    }
+  },
+  "targets": [
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+  ],
+  "versions": [
+    {
+      "release_label": "0.0.1-rc.5",
+      "date": "2025-01-25T19:48:48",
+      "release_type": "release candidate",
+      "description": "CICD and dev fixes"
+    },
+    {
+      "release_label": "0.0.1-rc.4",
+      "date": "2025-01-25T19:38:19",
+      "release_type": "release candidate",
+      "description": "Developer fixes"
+    },
+    {
+      "release_label": "0.0.1-rc.4",
+      "date": "2025-01-25T02:23:30",
+      "release_type": "release candidate",
+      "description": "Security fix"
+    },
+    {
+      "release_label": "0.0.1-rc.3",
+      "date": "2025-01-24T22:59:38",
+      "release_type": "release candidate",
+      "description": "Bug fixes"
+    },
+    {
+      "release_label": "0.0.1-beta.29",
+      "date": "2024-07-25T18:08:36",
+      "release_type": "beta",
+      "description": "Maintenance release"
+    },
+    {
+      "release_label": "0.0.1-beta.28",
+      "date": "2024-07-24T09:22:26",
+      "release_type": "beta",
+      "description": "Internal testing"
+    },
+    {
+      "release_label": "0.0.1-beta.27",
+      "date": "2024-07-24T09:07:34",
+      "release_type": "beta",
+      "description": "Initial beta release"
+    }
+  ],
+  "install_location": "%APPDATA%/Maya/plugins",
+  "requires_admin": false,
+  "categories": [
+    "3d"
+  ],
+  "license": "MIT",
+  "releases_url": "https://pypi.org/project/cwmaya",
+  "docs_url": "https://storm-doc.vercel.app",
+  "release_notes": "release_notes.md",
+  "last_updated": "2025-01-25T19:48:48"
 }
