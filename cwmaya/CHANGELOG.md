@@ -1,3 +1,7 @@
+## Version:0.0.1-rc.8 -- 26 Jan 2025
+
+* Modified detail.md to give sys-admin download instructions
+
 ## Version:0.0.1-rc.7 -- 26 Jan 2025
 
 * This release makes changes to the cwapps integration by way of the skulk_pre_push script.

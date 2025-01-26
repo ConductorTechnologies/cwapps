@@ -5,7 +5,7 @@
   "detail": "detail.md",
   "instructions": "instructions.md",
   "logo": "https://downloads.conductortech.com/images/maya.png",
-  "latest_version": "0.0.1-rc.7",
+  "latest_version": "0.0.1-rc.8",
   "author": "Conductor Developers",
   "website": "https://conductortech.com",
   "requires_admin": false,
@@ -14,7 +14,7 @@
   "license": "MIT",
   "releases_url": "https://pypi.org/project/cwmaya",
   "docs_url": "https://storm-doc.vercel.app",
-  "last_updated": "2025-01-26T15:07:18",
+  "last_updated": "2025-01-26T17:16:32",
   "operating_systems": {
     "windows": {
       "installer": "install.bat",
@@ -36,6 +36,12 @@
     "2025"
   ],
   "versions": [
+    {
+      "release_label": "0.0.1-rc.8",
+      "date": "2025-01-26T17:16:32",
+      "release_type": "release candidate",
+      "description": "cwapps detail"
+    },
     {
       "release_label": "0.0.1-rc.7",
       "date": "2025-01-26T15:07:18",
