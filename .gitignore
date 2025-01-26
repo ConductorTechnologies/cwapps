@@ -1,0 +1,10 @@
+# Ignore binaries
+bin/**/curl*
+bin/**/jq*
+
+# Don't ignore .gitkeep files
+!bin/**/.gitkeep
+
+# macOS system files
+.DS_Store
+**/.DS_Store 
