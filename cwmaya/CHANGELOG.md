@@ -1,3 +1,9 @@
+## Version:0.0.1-rc.9 -- 27 Jan 2025
+
+* Make the target descriptions clearer
+* Change release types to take up less space.
+* Clean up detail prose.
+
 ## Version:0.0.1-rc.8 -- 26 Jan 2025
 
 * Modified detail.md to give sys-admin download instructions
