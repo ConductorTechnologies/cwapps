@@ -1,0 +1,74 @@
+{
+  "name": "Frame Checker",
+  "id": "ciofcheck",
+  "summary": "Analyze and validate image sequences, detect missing frames, and visualize patterns.",
+  "detail": "detail.md",
+  "instructions": "instructions.md",
+  "logo": "https://www.computerhope.com/jargon/c/checkbox.png",
+  "latest_version": "1.0.0",
+  "author": "Julian Mann",
+  "website": "https://github.com/conductorTechnologies/ciofcheck",
+  "requires_admin": false,
+  "category": "utilities",
+  "changelog": "CHANGELOG.md",
+  "license": "MIT",
+  "releases_url": "https://pypi.org/project/ciofcheck",
+  "docs_url": "https://github.com/conductorTechnologies/ciofcheck",
+  "last_updated": "2024-03-15T00:00:00",
+  "operating_systems": {
+    "windows": {
+      "installer": "install.bat",
+      "default_location": "%USERPROFILE%/Documents/FrameChecker"
+    },
+    "mac": {
+      "installer": "install.sh",
+      "default_location": "$HOME/Documents/FrameChecker"
+    },
+    "linux": {
+      "installer": "install.sh",
+      "default_location": "$HOME/Documents/FrameChecker"
+    }
+  },
+  "targets": [
+    "Python 2.7",
+    "Python 3.x"
+  ],
+  "versions": [
+    {
+      "release_label": "1.0.0",
+      "date": "2024-03-15T00:00:00",
+      "release_type": "Stable",
+      "description": "First stable release with documentation and optimizations"
+    },
+    {
+      "release_label": "0.9.1-rc.2",
+      "date": "2024-03-01T00:00:00", 
+      "release_type": "RC",
+      "description": "Fixed memory leak and improved error messages"
+    },
+    {
+      "release_label": "0.9.0-rc.1",
+      "date": "2024-02-15T00:00:00",
+      "release_type": "RC",
+      "description": "Added interactive bar chart visualization"
+    },
+    {
+      "release_label": "0.8.0-beta.3",
+      "date": "2024-02-01T00:00:00",
+      "release_type": "Beta",
+      "description": "Added ASCII chart visualization and file size analysis"
+    },
+    {
+      "release_label": "0.7.0-beta.2",
+      "date": "2024-01-15T00:00:00",
+      "release_type": "Beta",
+      "description": "Added frame specifications and statistics gathering"
+    },
+    {
+      "release_label": "0.6.0-beta.1",
+      "date": "2024-01-01T00:00:00",
+      "release_type": "Beta",
+      "description": "Initial beta release with basic frame sequence parsing"
+    }
+  ]
+}

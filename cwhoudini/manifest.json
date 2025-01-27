@@ -1,0 +1,106 @@
+{
+  "name": "Conductor for Houdini",
+  "id": "cwhoudini",
+  "summary": "Submit your Houdini project to Conductor's cloud service.",
+  "detail": "detail.md",
+  "instructions": "instructions.md", 
+  "logo": "https://downloads.conductortech.com/images/houdini.png",
+  "latest_version": "0.7.17-rc.1",
+  "author": "Alaa Ibraham",
+  "website": "https://conductortech.com",
+  "requires_admin": false,
+  "category": "3d",
+  "changelog": "CHANGELOG.md",
+  "license": "MIT",
+  "releases_url": "https://pypi.org/project/cwhoudini",
+  "docs_url": "https://storm-doc.vercel.app",
+  "last_updated": "2024-11-25T00:00:00",
+  "operating_systems": {
+    "windows": {
+      "installer": "install.bat",
+      "default_location": "%USERPROFILE%/Documents/houdini"
+    },
+    "mac": {
+      "installer": "install-mac.sh", 
+      "default_location": "$HOME/Library/Preferences/houdini"
+    },
+    "linux": {
+      "installer": "install-linux.sh",
+      "default_location": "$HOME/houdini"
+    }
+  },
+  "targets": [
+    "Houdini 19.0",
+    "Houdini 19.5", 
+    "Houdini 20.0",
+    "Houdini 20.5"
+  ],
+  "versions": [
+    {
+      "release_label": "0.7.17-rc.1",
+      "date": "2024-11-25T00:00:00",
+      "release_type": "RC",
+      "description": "Implemented USD dependency scraping"
+    },
+    {
+      "release_label": "0.7.15",
+      "date": "2024-08-20T00:00:00", 
+      "release_type": "Release",
+      "description": "LOPs and instance type improvements"
+    },
+    {
+      "release_label": "0.7.12",
+      "date": "2024-07-12T00:00:00",
+      "release_type": "Release", 
+      "description": "TOPs support and asset scanning improvements"
+    },
+    {
+      "release_label": "0.7.11",
+      "date": "2023-12-12T00:00:00",
+      "release_type": "Release",
+      "description": "Arnold job shutdown fix"
+    },
+    {
+      "release_label": "0.7.10",
+      "date": "2023-11-20T00:00:00",
+      "release_type": "Release",
+      "description": "Asset upload and chunking improvements"
+    },
+    {
+      "release_label": "0.7.7",
+      "date": "2023-08-08T00:00:00",
+      "release_type": "Release",
+      "description": "Progress tab improvements"
+    },
+    {
+      "release_label": "0.7.6",
+      "date": "2023-08-07T00:00:00",
+      "release_type": "Release",
+      "description": "Progress tab improvements"
+    },
+    {
+      "release_label": "0.7.5",
+      "date": "2023-08-03T00:00:00",
+      "release_type": "Release",
+      "description": "Installation instructions update"
+    },
+    {
+      "release_label": "0.7.4",
+      "date": "2023-08-03T00:00:00",
+      "release_type": "Release",
+      "description": "Performance and frame range improvements"
+    },
+    {
+      "release_label": "0.7.3",
+      "date": "2023-08-02T00:00:00",
+      "release_type": "Release",
+      "description": "USD rendering and progress tracking"
+    },
+    {
+      "release_label": "0.7.2",
+      "date": "2023-07-10T00:00:00",
+      "release_type": "Release",
+      "description": "Path helper disabled"
+    }
+  ]
+}

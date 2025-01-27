@@ -1,0 +1,1 @@
+Command line tool for analyzing frame sequences and detecting missing frames in render outputs. Provides ASCII and bar chart visualizations, frame specification formats, file size analysis, and statistics gathering. Supports Python 2.7 and 3.x.

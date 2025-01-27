@@ -3,11 +3,22 @@
       {
         "order": 1,
         "id": "cwmaya"
+      },
+      {
+        "order": 2,
+        "id": "ciofcheck"
+      },
+      {
+        "order": 3,
+        "id": "cwc4d"
+      },
+      {
+        "order": 4,
+        "id": "cwhoudini"
       }
     ],
     "metadata": {
-      "last_updated": "2024-03-21T10:00:00Z",
+      "last_updated": "2025-01-27T10:00:00Z",
       "registry_version": "1.0.0"
     }
   }
-  
