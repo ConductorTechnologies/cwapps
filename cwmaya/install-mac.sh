@@ -30,16 +30,6 @@ usage() {
     echo "  -l, --location DIR          Installation location (default: $DEFAULT_LOCATION)"
     exit $INVALID_USAGE
 }
-
-list_targets() {
-    for year in $(seq $START_YEAR $END_YEAR); do
-        local mayapy_path="/Applications/Autodesk/maya${year}/Maya.app/Contents/bin/mayapy"
-        if [ -x "$mayapy_path" ]; then
-            echo "$year"
-        fi
-    done
-}
-
 find_python_for_maya() {
     local target="$1"
 
@@ -48,7 +38,7 @@ find_python_for_maya() {
     if [ -x "$mayapy_path" ]; then
         if "$mayapy_path" -m pip list &>/dev/null; then
             echo "$mayapy_path"
-            return 0
+            return $SUCCESS
         fi
     fi
 
@@ -57,7 +47,7 @@ find_python_for_maya() {
         if [ -x "$mayapy" ]; then
             if "$mayapy" -m pip list &>/dev/null; then
                 echo "$mayapy"
-                return 0
+                return $SUCCESS
             fi
         fi
     done
@@ -66,12 +56,13 @@ find_python_for_maya() {
     if command -v python3 >/dev/null; then
         if python3 -m pip list &>/dev/null; then
             echo "python3"
-            return 0
+            return $SUCCESS
         fi
     fi
 
     # No suitable python found
-    return 1
+    echo "Error: Could not find a suitable Python installation"
+    return $INSTALLATION_FAILED
 }
 
 # Function to install package for a specific Maya Python
@@ -125,7 +116,7 @@ do_install() {
     # Check if target is provided
     if [ -z "$target" ]; then
         echo "Error: Target Maya version must be specified"
-        exit $INVALID_USAGE
+        return $INVALID_USAGE
     fi
 
     # Determine requirements file if dev mode is enabled
@@ -139,7 +130,7 @@ do_install() {
     if [ -n "$install_location" ]; then
         if [ ! -d "$install_location" ]; then
             echo "Error: Installation location does not exist: $install_location"
-            exit $INVALID_LOCATION
+            return $INVALID_LOCATION
         fi
     else
         install_location="$DEFAULT_LOCATION"
@@ -150,7 +141,7 @@ do_install() {
     mayapy=$(find_python_for_maya "$target")
     if [ $? -ne 0 ]; then
         echo "Error: No Maya $target installation found"
-        exit $INVALID_TARGET
+        return $INVALID_TARGET
     fi
 
     local target_dir="${install_location}/${target}/${VENDOR}"
@@ -158,18 +149,26 @@ do_install() {
     local module_file="${module_dir}/${PRODUCT}.mod"
 
     mkdir -p "$target_dir"
+    if [ $? -ne 0 ]; then
+        echo "Error: Failed to create target directory: $target_dir"
+        return $INSTALLATION_FAILED
+    fi
+
     mkdir -p "$module_dir"
+    if [ $? -ne 0 ]; then
+        echo "Error: Failed to create module directory: $module_dir"
+        return $INSTALLATION_FAILED
+    fi
 
     # Perform installation
     if ! install_for_mayapy "$mayapy" "$target_dir" "$version" "$package_spec" "$requirements_file"; then
         echo "Installation failed for Maya $target"
-        exit $INSTALLATION_FAILED
+        return $INSTALLATION_FAILED
     fi
 
     # Create module file
     echo "+ ${PRODUCT} ${version:-1.0} ${target_dir}/${PRODUCT}" >"$module_file"
     echo "CWMAYA_CIODIR=${target_dir}" >>"$module_file"
-    # echo "PYTHONPATH=${target_dir}" >> "$module_file"
 
     echo "----------------------------------------"
     echo "Installed ${PRODUCT} ${version:-latest} to ${target_dir}/${PRODUCT}"
@@ -177,13 +176,13 @@ do_install() {
     echo "- - - - - - - - - - - - - - - - - - - -"
     cat "$module_file"
     echo "----------------------------------------"
-    exit $SUCCESS
+    return $SUCCESS
 }
 
 # Parse command line arguments
 VERSION=""
 LOCATION=""
-TARGET=""
+TARGETS=()
 DEV_MODE=false
 while [[ "$#" -gt 0 ]]; do
     case "$1" in
@@ -201,7 +200,9 @@ while [[ "$#" -gt 0 ]]; do
         ;;
     "-t" | "--target")
         shift
-        TARGET="$1"
+        # Extract just the year from target string (e.g. "Maya 2024" -> "2024")
+        year=$(echo "$1" | grep -o '[0-9]\{4\}')
+        TARGETS+=("$year")
         ;;
     "-d" | "--dev")
         if [ -n "$VERSION" ]; then
@@ -218,14 +219,26 @@ while [[ "$#" -gt 0 ]]; do
     shift
 done
 
-# Check if target is provided
-if [ -z "$TARGET" ]; then
+# Check if at least one target is provided
+if [ ${#TARGETS[@]} -eq 0 ]; then
     echo "Error: --target is required"
     usage
 fi
 
-# Execute installation
-do_install "$VERSION" "$LOCATION" "$TARGET" "$DEV_MODE"
+# Execute installation for each target
+any_failure=false
+for TARGET in "${TARGETS[@]}"; do
+    if ! do_install "$VERSION" "$LOCATION" "$TARGET" "$DEV_MODE"; then
+        any_failure=true
+    fi
+done
+
+# Exit with failure if any target installation failed
+if [ "$any_failure" = true ]; then
+    echo "Installation failed for one or more targets"
+    exit $INSTALLATION_FAILED
+fi
 
 # If we somehow get here, exit successfully
+echo "Installation completed successfully for all targets"
 exit $SUCCESS

@@ -1,3 +1,8 @@
+## Version:0.0.1-rc.10 -- 27 Jan 2025
+
+* Improved error handling and reporting in the installer script
+* Added support for installing to multiple Maya versions at once
+
 ## Version:0.0.1-rc.9 -- 27 Jan 2025
 
 * Make the target descriptions clearer
