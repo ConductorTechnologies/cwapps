@@ -1,3 +1,7 @@
+## Version:0.0.1-rc.12 -- 28 Jan 2025
+
+* Added instructions for system administrators
+
 ## Version:0.0.1-rc.11 -- 27 Jan 2025
 
 * Tidied up the manifest file and fixed a bug where custom instal;l paths would not be found by the mod file

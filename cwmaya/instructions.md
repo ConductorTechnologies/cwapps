@@ -1,16 +1,15 @@
-Congratulations! You're set to start submitting renders to Conductor from within Maya. Open Maya and load the Conductor plugin from the Plugin Manager. You should see a new menu called "Conductor" in the main menu bar. From there you can configure a submission.
+### Set up
+If the installation was a success, you should see the Conductor plugin in Maya's Plugin Manager. When you load the plugin, you'll see a new menu called Conductor in the main menu bar. From there you can configure a submission. 
 
 ### Notes for system administrators
 
-#### Shared location
-If you'd like to make the plugin accessible to others on your network, set the MAYA_MODULE_PATH environment variable to the install location. The example below is for Mac/Linux. For Windows, please use the **Edit Environment Variables** panel.
-
+If you are installing on behalf of other artists, we recommend you download the installer script from the tool detail card (link in the top right corner of the card) and run it on their machines.
 ```bash
 # Add the Conductor module install location to the MAYA_MODULE_PATH.
 export MAYA_MODULE_PATH={{installPath}}:$MAYA_MODULE_PATH
 ```
 #### Security
-This plugin does not require network access to work. If you distribute it to artists who need to submit directly to the Conductor cloud, please also ensure that they have the desktop app installed. This is the ideal workflow for artists. In the absence of the desktop app, artists can submit their jobs scripts to a dedicated render wrangler machine with the desktop app installed.
+In a high security environment, artists on machines without access to the internet can submit jobs to a machine with the desktop app installed, possibly manned by a render wrangler. The render wrangler can then forward jobs to the Conductor cloud.
 
 The machine with the desktop app installed requires certain ports and URL access as below.
 
@@ -26,6 +25,3 @@ URLs:
 - https://docs.conductortech.com
 - https://downloads.conductortech.com
 - https://raw.githubusercontent.com
-
-
-touch install.bat install-mac.sh install-linux.sh

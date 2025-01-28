@@ -5,7 +5,7 @@
   "detail": "detail.md",
   "instructions": "instructions.md",
   "logo": "https://downloads.conductortech.com/images/maya.png",
-  "latest_version": "0.0.1-rc.11",
+  "latest_version": "0.0.1-rc.12",
   "author": "Conductor Developers",
   "website": "https://conductortech.com",
   "requires_admin": false,
@@ -14,7 +14,7 @@
   "license": "MIT",
   "releases_url": "https://pypi.org/project/cwmaya",
   "docs_url": "https://storm-doc.vercel.app",
-  "last_updated": "2025-01-27T19:31:13",
+  "last_updated": "2025-01-28T01:34:54",
   "operating_systems": {
     "windows": {
       "installer": "install.bat",
@@ -36,6 +36,12 @@
     "Maya 2025"
   ],
   "versions": [
+    {
+      "release_label": "0.0.1-rc.12",
+      "date": "2025-01-28T01:34:54",
+      "release_type": "RC",
+      "description": "Added instructions for system administrators"
+    },
     {
       "release_label": "0.0.1-rc.11",
       "date": "2025-01-27T19:31:13",
