@@ -1,3 +1,7 @@
+## Version:0.0.1-rc.11 -- 27 Jan 2025
+
+* Tidied up the manifest file and fixed a bug where custom instal;l paths would not be found by the mod file
+
 ## Version:0.0.1-rc.10 -- 27 Jan 2025
 
 * Improved error handling and reporting in the installer script

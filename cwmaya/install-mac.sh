@@ -1,8 +1,9 @@
 #!/bin/bash
 
 # Default installation location
-DEFAULT_LOCATION="$HOME/Library/Preferences/Autodesk/maya"
 
+MAYA_APP_DIR="$HOME/Library/Preferences/Autodesk/maya"
+DEFAULT_LOCATION=$MAYA_APP_DIR
 # Exit codes
 SUCCESS=0
 INVALID_USAGE=1
@@ -145,18 +146,18 @@ do_install() {
     fi
 
     local target_dir="${install_location}/${target}/${VENDOR}"
-    local module_dir="${install_location}/${target}/modules"
+    local module_dir="${MAYA_APP_DIR}/${target}/modules"
     local module_file="${module_dir}/${PRODUCT}.mod"
 
     mkdir -p "$target_dir"
     if [ $? -ne 0 ]; then
-        echo "Error: Failed to create target directory: $target_dir"
+        echo "Error: Failed to create or find target directory: $target_dir"
         return $INSTALLATION_FAILED
     fi
 
     mkdir -p "$module_dir"
     if [ $? -ne 0 ]; then
-        echo "Error: Failed to create module directory: $module_dir"
+        echo "Error: Failed to create or find module directory: $module_dir"
         return $INSTALLATION_FAILED
     fi
 
@@ -167,11 +168,11 @@ do_install() {
     fi
 
     # Create module file
-    echo "+ ${PRODUCT} ${version:-1.0} ${target_dir}/${PRODUCT}" >"$module_file"
+    echo "+ ${PRODUCT} ${version:-dev.999} ${target_dir}/${PRODUCT}" >"$module_file"
     echo "CWMAYA_CIODIR=${target_dir}" >>"$module_file"
 
     echo "----------------------------------------"
-    echo "Installed ${PRODUCT} ${version:-latest} to ${target_dir}/${PRODUCT}"
+    echo "Installed ${PRODUCT} ${version:-dev.999} to ${target_dir}/${PRODUCT}"
     echo "Wrote module file: $module_file"
     echo "- - - - - - - - - - - - - - - - - - - -"
     cat "$module_file"
