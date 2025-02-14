@@ -1,3 +1,19 @@
+## Version:0.0.1 -- 14 Feb 2025
+
+* Updated cwstorm dependency to version 2.1.1
+* Merged pull request #6 to add flat task templates and hints functionality
+* Improved UI by merging General and Job tabs into unified interface
+* Enhanced data models with better logging, error handling
+* Added plugin detection
+* Added dynamic entry and duplicate prevention to SoftwareStackControl
+* Restored core data models to support in-session hints
+* Added hints frame to script tab
+* Improved submit button
+* Created flat task template system
+* Re-implemented coredata controls in plugin
+* Updated installer to use the cache in development mode
+* Restructured and renamed components for clarity and extensibility
+
 ## Version:0.0.1-rc.12 -- 28 Jan 2025
 
 * Added instructions for system administrators

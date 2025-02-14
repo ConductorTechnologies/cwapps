@@ -79,7 +79,6 @@ install_for_mayapy() {
         "$mayapy" -m pip install \
             --upgrade \
             --force-reinstall \
-            --no-cache-dir \
             --ignore-installed \
             --no-warn-script-location \
             --target "$target_dir" \
