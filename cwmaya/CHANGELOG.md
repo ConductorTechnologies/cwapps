@@ -1,3 +1,7 @@
+## Version:0.0.2 -- 14 Feb 2025
+
+* Update the About window with cirrect module constant and copyright year
+
 ## Version:0.0.1 -- 14 Feb 2025
 
 * Updated cwstorm dependency to version 2.1.1
