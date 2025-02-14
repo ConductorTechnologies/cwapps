@@ -5,7 +5,7 @@
   "detail": "detail.md",
   "instructions": "instructions.md",
   "logo": "https://downloads.conductortech.com/images/maya.png",
-  "latest_version": "0.0.2",
+  "latest_version": "0.0.3",
   "author": "Conductor Developers",
   "website": "https://conductortech.com",
   "requires_admin": false,
@@ -14,7 +14,7 @@
   "license": "MIT",
   "releases_url": "https://pypi.org/project/cwmaya",
   "docs_url": "https://storm-doc.vercel.app",
-  "last_updated": "2025-02-14T12:09:58",
+  "last_updated": "2025-02-14T12:19:59",
   "operating_systems": {
     "windows": {
       "installer": "install.bat",
@@ -36,6 +36,12 @@
     "Maya 2025"
   ],
   "versions": [
+    {
+      "release_label": "0.0.3",
+      "date": "2025-02-14T12:19:59",
+      "release_type": "Release",
+      "description": "Fix about window bug"
+    },
     {
       "release_label": "0.0.2",
       "date": "2025-02-14T12:09:58",

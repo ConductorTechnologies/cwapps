@@ -1,4 +1,4 @@
-## Version:0.0.2 -- 14 Feb 2025
+## Version:0.0.3 -- 14 Feb 2025
 
 * Update the About window with cirrect module constant and copyright year
 
@@ -17,6 +17,8 @@
 * Re-implemented coredata controls in plugin
 * Updated installer to use the cache in development mode
 * Restructured and renamed components for clarity and extensibility
+
+
 
 ## Version:0.0.1-rc.12 -- 28 Jan 2025
 
